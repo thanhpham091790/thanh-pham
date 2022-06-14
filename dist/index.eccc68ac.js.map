@@ -1,0 +1,1 @@
+{"mappings":"AAAA,MAAMA,QAAUC,SAASC,cAAc,MACvCF,QAAQG,iBAAiB,SAAS,KAC9BC,MAAM","sources":["src/js/scripts.js"],"sourcesContent":["const heading = document.querySelector('h1');\r\nheading.addEventListener('click', () => {\r\n    alert('Check JS!');\r\n});"],"names":["heading","document","querySelector","addEventListener","alert"],"version":3,"file":"index.eccc68ac.js.map"}
