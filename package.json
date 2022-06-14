@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/thanhpham091790/thanh-pham#readme",
   "devDependencies": {
+    "eslint": "^8.17.0",
     "parcel": "^2.6.0",
     "prettier": "2.7.0"
   }
