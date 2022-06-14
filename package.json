@@ -2,9 +2,9 @@
   "name": "thanh-pham",
   "version": "1.0.0",
   "description": "Black and white portfolio template.",
-  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "parcel build src/index.html"
   },
   "repository": {
     "type": "git",
@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/thanhpham091790/thanh-pham/issues"
   },
-  "homepage": "https://github.com/thanhpham091790/thanh-pham#readme"
+  "homepage": "https://github.com/thanhpham091790/thanh-pham#readme",
+  "devDependencies": {
+    "parcel": "^2.6.0"
+  }
 }
