@@ -194,6 +194,24 @@ header, section, footer {
           background-color: rgb(97, 97, 97);
   */
 }
+#profile-info #skills .container {
+  margin: 1.6rem;
+}
+#profile-info #skills .container p {
+  text-align: left;
+}
+#profile-info #skills .container .bar {
+  background-color: rgb(241, 241, 241);
+  color: rgb(0, 0, 0);
+}
+#profile-info #skills .container .bar .percent {
+  padding: 1.6rem;
+  background-color: rgb(97, 97, 97);
+  color: rgb(255, 255, 255);
+  font-size: 1.6rem;
+  line-height: 1.5;
+  font-family: inherit;
+}
 #profile-info #contact {
   /* 
   i: 
