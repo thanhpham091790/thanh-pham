@@ -12,3 +12,46 @@ close_icon.addEventListener('click', () => {
     menu_icon.style.display = 'block';
     mobile_nav.style.display = 'none';
 });
+
+
+
+const filterContainer = document.querySelector('#filter-container');
+const btnList = filterContainer.querySelectorAll('.btn');
+const gridContainer = document.querySelector('#grid-container');
+const columns = gridContainer.querySelectorAll('.column');
+
+function porfolioFilter(id) {
+    // Add active class to filter button when button was clicked.
+    for (let i = 0; i < btnList.length; i++) {
+        btnList[i].classList.remove('active');
+        if (btnList[i].id == id) {
+            btnList[i].classList.add('active');
+        }
+    }
+
+    if (id == 'all') {
+        for (let i = 0; i < columns.length; i++) {
+            if (!columns[i].classList.contains(id)) {
+                columns[i].classList.add('show');
+            }
+            // console.log(columns[i].classList);
+        }
+    } else {
+        for (let i = 0; i < columns.length; i++) {
+            columns[i].classList.remove('show');
+            if (columns[i].classList.contains(id)) {
+                columns[i].classList.add('show');
+            }
+            // console.log(columns[i].classList);
+        }
+    }
+
+}
+
+
+for (let i = 0; i < btnList.length; i++) {
+    let btnId = btnList[i].id;
+    btnList[i].addEventListener('click', () => {
+        porfolioFilter(btnId);
+    });
+}
