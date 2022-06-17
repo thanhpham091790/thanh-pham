@@ -24,6 +24,7 @@ body {
 img {
   max-width: 100%;
   height: auto;
+  display: block;
 }
 
 .btn {
@@ -270,6 +271,34 @@ header, section, footer {
   }
   #profile-info #contact #contact-form input, #profile-info #contact #contact-form textarea {
     max-width: 90%;
+    margin: 1.6rem auto;
+  }
+}
+@media (min-width: 768px) {
+  #profile-info header img {
+    max-width: 75%;
+  }
+  #profile-info #portfolio #grid-container .content {
+    max-width: 75%;
+  }
+  #profile-info #about p {
+    max-width: 75%;
+    margin: 0 auto;
+  }
+  #profile-info #skills .container {
+    max-width: 75%;
+    margin: 0 auto;
+  }
+  #profile-info #contact address {
+    max-width: 75%;
+    margin: 0 auto;
+  }
+  #profile-info #contact #map {
+    max-width: 75%;
+    margin: 0 auto;
+  }
+  #profile-info #contact #contact-form input, #profile-info #contact #contact-form textarea {
+    max-width: 75%;
     margin: 1.6rem auto;
   }
 }/*# sourceMappingURL=styles.css.map */
