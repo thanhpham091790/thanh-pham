@@ -314,26 +314,29 @@ header, #portfolio, #about, #skills, #contact, footer {
     max-width: 50%;
   }
   #profile-info #portfolio #grid-container .column .content {
-    max-width: 90%;
+    max-width: 100%;
   }
   #profile-info #about p {
-    max-width: 60%;
+    max-width: 100%;
     margin: 0 auto;
+  }
+  #profile-info #skills {
+    padding: 1.6rem;
   }
   #profile-info #skills .container {
-    max-width: 60%;
-    margin: 0 auto;
+    max-width: 100%;
+    margin: 1.6rem auto;
   }
   #profile-info #contact address {
-    max-width: 60%;
+    max-width: 100%;
     margin: 0 auto;
   }
   #profile-info #contact #map {
-    max-width: 60%;
+    max-width: 100%;
     margin: 0 auto;
   }
   #profile-info #contact #contact-form input, #profile-info #contact #contact-form textarea {
-    max-width: 60%;
+    max-width: 100%;
     margin: 1.6rem auto;
   }
 }
@@ -341,7 +344,7 @@ header, #portfolio, #about, #skills, #contact, footer {
   #profile-img {
     display: block;
     margin: 0;
-    width: 50%;
+    width: 40%;
     height: 100vh;
     float: left;
     background-image: url(../assets/header/profile_pic.jpg);
@@ -350,10 +353,13 @@ header, #portfolio, #about, #skills, #contact, footer {
   }
 
   #profile-info {
-    width: 50%;
+    width: 60%;
     height: 100vh;
     float: right;
     overflow-y: scroll;
+  }
+  #profile-info nav #drop-down {
+    width: 60%;
   }
   #profile-info header img {
     display: none;
