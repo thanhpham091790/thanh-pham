@@ -301,4 +301,41 @@ header, section, footer {
     max-width: 75%;
     margin: 1.6rem auto;
   }
+}
+@media (min-width: 992px) {
+  #profile-info header img {
+    max-width: 60%;
+  }
+  #profile-info #portfolio #grid-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  #profile-info #portfolio #grid-container .column {
+    flex: 50%;
+    max-width: 50%;
+  }
+  #profile-info #portfolio #grid-container .column .content {
+    max-width: 90%;
+  }
+  #profile-info #about p {
+    max-width: 60%;
+    margin: 0 auto;
+  }
+  #profile-info #skills .container {
+    max-width: 60%;
+    margin: 0 auto;
+  }
+  #profile-info #contact address {
+    max-width: 60%;
+    margin: 0 auto;
+  }
+  #profile-info #contact #map {
+    max-width: 60%;
+    margin: 0 auto;
+  }
+  #profile-info #contact #contact-form input, #profile-info #contact #contact-form textarea {
+    max-width: 60%;
+    margin: 1.6rem auto;
+  }
 }/*# sourceMappingURL=styles.css.map */
