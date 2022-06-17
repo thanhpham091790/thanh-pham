@@ -1,4 +1,4 @@
-
+/* Start: Add some javascripts for navigation bar. */
 const menu_icon = document.querySelector('#menu');
 const close_icon = document.querySelector('#close');
 const mobile_nav = document.querySelector('#drop-down');
@@ -13,9 +13,10 @@ close_icon.addEventListener('click', () => {
     menu_icon.style.display = 'block';
     mobile_nav.style.display = 'none';
 });
+/* End: Add some javascripts for navigation bar. */
 
 
-
+/* Start: Add some javascript for portfolio filter. */
 const filterContainer = document.querySelector('#filter-container');
 const btnList = filterContainer.querySelectorAll('.btn');
 const gridContainer = document.querySelector('#grid-container');
@@ -55,8 +56,10 @@ for (let i = 0; i < btnList.length; i++) {
         porfolioFilter(btnId);
     });
 }
+/* End: Add some javascript for portfolio filter. */
 
 
+/* Start: Add some javascript for percent bar. */
 const percentList = document.querySelectorAll('.percent');
 for (let i = 0; i < percentList.length; i++) {
     let text = percentList[i].textContent;
@@ -65,3 +68,17 @@ for (let i = 0; i < percentList.length; i++) {
     console.log(num);
     percentList[i].style.width = `${num}%`;
 }
+
+/* Start: Add some javascript for percent bar. */
+
+
+/* Start: Add some javascript for map. */
+L.mapquest.key = '8bjlbcHoGVSkdZiGpfRlGbHFIItuSEnO';
+
+// 'map' refers to a <div> element with the ID map
+const map = L.mapquest.map('map', {
+    center: [39.6296192, -104.9755648],
+    layers: L.mapquest.tileLayer('map'),
+    zoom: 12
+});
+/* End: Add some javascript for map. */
