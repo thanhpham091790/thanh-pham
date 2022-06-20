@@ -78,7 +78,7 @@ L.mapquest.key = '8bjlbcHoGVSkdZiGpfRlGbHFIItuSEnO';
 // 'map' refers to a <div> element with the ID map
 const map = L.mapquest.map('map', {
     center: [39.6296192, -104.9755648],
-    layers: L.mapquest.tileLayer('map'),
+    layers: L.mapquest.tileLayer('light'),
     zoom: 12
 });
 /* End: Add some javascript for map. */
