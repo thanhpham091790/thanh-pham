@@ -1,0 +1,26 @@
+[
+    {
+      "name" : "Jane Doe Portfolio",
+      "link" : "https://thp001-jane-doe-portfolio.netlify.app",
+      "image" : "thp.jpg",
+      "type" : "nature"
+    },
+    {
+      "name" : "Will It Miss",
+      "link" : "https://thp002-will-it-miss.netlify.app",
+      "image" : "thp.jpg",
+      "type" : "cars"
+    },
+    {
+      "name" : "Lead Generation CQL",
+      "link" : "https://thp003-lead-generation-cql.netlify.app",
+      "image" : "thp.jpg",
+      "type" : "people"
+    },
+    {
+      "name" : "Burger House",
+      "link" : "https://thp004-burger-house.netlify.app",
+      "image" : "thp.jpg",
+      "type" : "nature"
+    }
+  ]
