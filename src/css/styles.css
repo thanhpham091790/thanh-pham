@@ -155,13 +155,22 @@ header, #portfolio, #about, #skills, #contact, footer {
 #profile-info #portfolio #grid-container .column .content {
   box-shadow: 1.6rem 1.6rem 1.6rem rgb(204, 204, 204);
   margin: 0 auto;
+  position: relative;
 }
-#profile-info #portfolio #grid-container .column .content h3 {
+#profile-info #portfolio #grid-container .column .content .overlay {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translate(0, -50%);
+  width: 100%;
+  text-align: center;
+}
+#profile-info #portfolio #grid-container .column .content .overlay h3 {
   font-family: inherit;
-  font-size: 1.6rem;
+  font-size: 3.6rem;
   font-weight: 400;
   padding: 1.6rem;
-  color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
 }
 #profile-info #portfolio #grid-container .column.show {
   display: block;
@@ -354,6 +363,7 @@ header, #portfolio, #about, #skills, #contact, footer {
     background-image: url(../assets/header/profile_pic.jpg);
     background-repeat: no-repeat;
     background-size: cover;
+    filter: grayscale(100%);
   }
 
   #profile-info {
