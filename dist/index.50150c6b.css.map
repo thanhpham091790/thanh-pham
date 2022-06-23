@@ -1,1 +1,0 @@
-{"mappings":"AECA","sources":["index.50150c6b.css","src/css/styles.css","src/css/styles.scss"],"sourcesContent":["h1 {\n  color: salmon;\n}\n\n/*# sourceMappingURL=index.50150c6b.css.map */\n","/* Using Sass */\nh1 {\n  color: salmon;\n}/*# sourceMappingURL=styles.css.map */","/* Using Sass */\nh1{\n    color: salmon;\n}"],"names":[],"version":3,"file":"index.50150c6b.css.map"}
