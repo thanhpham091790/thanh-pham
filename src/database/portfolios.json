@@ -3,24 +3,24 @@
       "name" : "Jane Doe",
       "link" : "https://thp001-jane-doe.netlify.app",
       "image" : "thp.jpg",
-      "type" : "nature"
+      "type" : "html"
     },
     {
       "name" : "Will It Miss",
       "link" : "https://thp002-will-it-miss.netlify.app",
       "image" : "thp.jpg",
-      "type" : "cars"
+      "type" : "api"
     },
     {
       "name" : "Lead Generation CQL",
       "link" : "https://thp003-lead-generation-cql.netlify.app",
       "image" : "thp.jpg",
-      "type" : "people"
+      "type" : "css"
     },
     {
       "name" : "Burger House",
       "link" : "https://thp004-burger-house.netlify.app",
       "image" : "thp.jpg",
-      "type" : "nature"
+      "type" : "js"
     }
   ]

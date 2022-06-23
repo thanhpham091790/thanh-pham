@@ -5,58 +5,16 @@ const mobile_nav = document.querySelector('#drop-down');
 
 
 menu_icon.addEventListener('click', () => {
-    mobile_nav.style.display = 'block';
+    mobile_nav.style.transform = 'translateX(0%)';
     menu_icon.style.display = 'none';
 });
 
 close_icon.addEventListener('click', () => {
     menu_icon.style.display = 'block';
-    mobile_nav.style.display = 'none';
+    mobile_nav.style.transform = 'translateX(100%)';
 });
 /* End: Add some javascripts for navigation bar. */
 
-
-/* Start: Add some javascript for portfolio filter. */
-const filterContainer = document.querySelector('#filter-container');
-const btnList = filterContainer.querySelectorAll('.btn');
-const gridContainer = document.querySelector('#grid-container');
-const columns = gridContainer.querySelectorAll('.column');
-
-function porfolioFilter(id) {
-    // Add 'active' class to filter button when button was clicked.
-    for (let i = 0; i < btnList.length; i++) {
-        btnList[i].classList.remove('active');
-        if (btnList[i].id == id) {
-            btnList[i].classList.add('active');
-        }
-    }
-
-    // Add 'show' class to all column when 'all' button was clicked.
-    if (id == 'all') {
-        for (let i = 0; i < columns.length; i++) {
-            if (!columns[i].classList.contains(id)) {
-                columns[i].classList.add('show');
-            }
-        }
-    } else { // Otherwise, only add 'show' class to responding column.
-        for (let i = 0; i < columns.length; i++) {
-            columns[i].classList.remove('show');
-            if (columns[i].classList.contains(id)) {
-                columns[i].classList.add('show');
-            }
-        }
-    }
-
-}
-
-// Attach 'click' event to all filter buttons.
-for (let i = 0; i < btnList.length; i++) {
-    let btnId = btnList[i].id;
-    btnList[i].addEventListener('click', () => {
-        porfolioFilter(btnId);
-    });
-}
-/* End: Add some javascript for portfolio filter. */
 
 
 /* Start: Add some javascript for percent bar. */
@@ -67,8 +25,7 @@ for (let i = 0; i < percentList.length; i++) {
     let num = parseInt(text.slice(0, percentIndex));
     percentList[i].style.width = `${num}%`;
 }
-
-/* Start: Add some javascript for percent bar. */
+/* End: Add some javascript for percent bar. */
 
 
 /* Start: Add some javascript for map. */
@@ -85,9 +42,8 @@ const map = L.mapquest.map('map', {
 
 /* Start: Use fetch to retrieve the projects. */
 
-// Grab UI elements that we need to manipulate
+const filter = document.querySelector('#filter-container');
 const grid = document.querySelector('#grid-container');
-let theFirstChild;
 
 fetch('database/portfolios.json').then(
     (response) => {
@@ -127,10 +83,12 @@ function initialize(projects) {
 
 function updateDisplay(finalGroup) {
     if (finalGroup.length === 0) {
+        // Show message  if no project in database
         const para = document.createElement('p');
         para.textContent = 'No projects to display!';
         grid.appendChild(para);
     } else {
+        // Grid container.
         while (grid.firstChild) {
             grid.removeChild(grid.firstChild);
         }
@@ -138,12 +96,80 @@ function updateDisplay(finalGroup) {
         for (const project of finalGroup) {
             fetchBlob(project);
         }
+
+        // Filter container.
+        let filterTypes = finalTypes = [];
+        for (project of finalGroup) {
+            filterTypes = filterTypes.concat(project.type.split(' ').join('').split(','));
+        }
+        finalTypes = filterTypes.filter((value, index, array) => {
+            if (array.indexOf(value) === index) {
+                return true;
+            }
+        });
+
+        if (finalTypes.length >= 2) {
+            finalTypes.unshift('all');
+        }
+
+        for (const type of finalTypes) {
+            showFilter(type);
+        }
     }
 }
 
+
+// Illustrate filter button inside filter-container element.
+function showFilter(type) {
+    const filterBtn = document.createElement('button');
+    filterBtn.setAttribute('id', `${type}`);
+    filterBtn.setAttribute('class', 'btn');
+    if (type == 'all') {
+        filterBtn.classList.add('active');
+    }
+    filterBtn.textContent = `${type.charAt(0).toUpperCase() + type.slice(1)}`;
+    filterBtn.addEventListener('click', () => {
+        porfolioFilter(type);
+    });
+
+    filter.appendChild(filterBtn);
+}
+
+
+function porfolioFilter(type) {
+    const btnList = filter.querySelectorAll('.btn');
+    const columns = grid.querySelectorAll('.column');
+    // Add 'active' class to filter button when button was clicked.
+    for (let i = 0; i < btnList.length; i++) {
+        btnList[i].classList.remove('active');
+        if (btnList[i].id == type) {
+            btnList[i].classList.add('active');
+        }
+    }
+
+    // Add 'show' class to all column when 'all' button was clicked.
+    if (type == 'all') {
+        for (let i = 0; i < columns.length; i++) {
+            if (!columns[i].classList.contains(type)) {
+                columns[i].classList.add('show');
+            }
+        }
+    } else { // Otherwise, only add 'show' class to responding column.
+        for (let i = 0; i < columns.length; i++) {
+            columns[i].classList.remove('show');
+            if (columns[i].classList.contains(type)) {
+                columns[i].classList.add('show');
+            }
+        }
+    }
+
+}
+
+// Prepare needed things of a project before display.
 function fetchBlob(project) {
     // Contruct the URL path to the image file from the product.image property.
-    const url = `assets/portfolio/${project.image}`;
+    // const url = `assets/portfolio/${project.image}`;
+    const url = 'assets/portfolio/thp.jpg';
 
     // Use fetch to fetch the image.
     fetch(url).then(
@@ -167,7 +193,7 @@ function fetchBlob(project) {
     );
 }
 
-// Illustrate project inside grid-container element
+// Illustrate project inside grid-container element.
 function showProject(blob, project) {
     // Convert the blob to an object URL - this is basically an temporary internal URL
     // that points to an object stored inside the browser.
@@ -210,7 +236,7 @@ function showProject(blob, project) {
     div2.appendChild(img);
     div2.appendChild(div3);
     div1.appendChild(div2);
-    theFirstChild = grid.firstChild;
+    let theFirstChild = grid.firstChild;
     if (grid.firstChild != null) {
         grid.insertBefore(div1, theFirstChild);
     } else {
