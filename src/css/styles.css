@@ -309,6 +309,9 @@ header, #portfolio, #about, #skills, #contact, footer {
   }
 }
 @media (min-width: 768px) {
+  #profile-info header, #profile-info #portfolio, #profile-info #about, #profile-info #skills, #profile-info #contact, #profile-info footer {
+    padding: 4.8rem 3.2rem;
+  }
   #profile-info #portfolio #grid-container {
     justify-content: space-between;
   }
@@ -379,6 +382,9 @@ header, #portfolio, #about, #skills, #contact, footer {
     height: 100vh;
     float: right;
     overflow-y: scroll;
+  }
+  #profile-info header, #profile-info #portfolio, #profile-info #about, #profile-info #skills, #profile-info #contact, #profile-info footer {
+    padding: 4.8rem;
   }
   #profile-info header img {
     display: none;

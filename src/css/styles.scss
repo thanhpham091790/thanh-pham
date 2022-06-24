@@ -397,6 +397,10 @@ header, #portfolio, #about, #skills, #contact, footer{
 // Medium devices (tablets, 768px and up)
 @media (min-width: 768px) {
     #profile-info{
+        header, #portfolio, #about, #skills, #contact, footer{
+            padding: 4.8rem 3.2rem;
+        }
+
         #portfolio{
             #grid-container{
                 justify-content: space-between;
@@ -477,6 +481,7 @@ header, #portfolio, #about, #skills, #contact, footer{
 
 // X-Large devices (large desktops, 1200px and up)
 @media (min-width: 1200px) {
+
     #profile-img{
         display: block;
         margin: 0;
@@ -494,6 +499,10 @@ header, #portfolio, #about, #skills, #contact, footer{
         height: 100vh;
         float: right;
         overflow-y: scroll;
+
+        header, #portfolio, #about, #skills, #contact, footer{
+            padding: 4.8rem;
+        }
 
         header{
             img{
