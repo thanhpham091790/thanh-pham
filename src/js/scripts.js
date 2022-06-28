@@ -56,7 +56,7 @@ tinymce.init({
 const filter = document.querySelector('#filter-container');
 const grid = document.querySelector('#grid-container');
 
-fetch('database/portfolios.json').then(
+fetch('./database/portfolios.json').then(
     (response) => {
         if (!response.ok) {
             // Report any errors that occur in the fetch operation.
