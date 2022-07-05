@@ -172,9 +172,10 @@ header, #portfolio, #about, #skills, #contact, footer {
 }
 #profile-info #portfolio #grid-container .column .content .overlay h3 {
   font-family: inherit;
-  font-size: 3.6rem;
+  font-size: 2rem;
   font-weight: 400;
   padding: 1.6rem;
+  text-transform: uppercase;
   color: rgb(255, 255, 255);
 }
 #profile-info #portfolio #grid-container .column.show {
@@ -284,8 +285,8 @@ header, #portfolio, #about, #skills, #contact, footer {
 
 @media (min-width: 576px) {
   #profile-info #portfolio #grid-container .column {
-    flex: 90%;
-    max-width: 90%;
+    flex: 70%;
+    max-width: 70%;
   }
   #profile-info #about p {
     max-width: 90%;
@@ -388,5 +389,14 @@ header, #portfolio, #about, #skills, #contact, footer {
   }
   #profile-info header img {
     display: none;
+  }
+}
+@media (min-width: 1440px) {
+  #profile-info #portfolio #grid-container {
+    justify-content: space-around;
+  }
+  #profile-info #portfolio #grid-container .column {
+    flex: 40%;
+    max-width: 40%;
   }
 }/*# sourceMappingURL=styles.css.map */

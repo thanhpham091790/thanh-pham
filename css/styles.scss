@@ -199,9 +199,10 @@ header, #portfolio, #about, #skills, #contact, footer{
 
                         h3{
                             font-family: inherit;
-                            font-size: 3.6rem;
+                            font-size: 2rem;
                             font-weight: 400;
                             padding: 1.6rem;
+                            text-transform: uppercase;
                             color: $color-2;
                         }
                     }
@@ -350,8 +351,8 @@ header, #portfolio, #about, #skills, #contact, footer{
         #portfolio{
             #grid-container{
                 .column{
-                    flex: 90%;
-                    max-width: 90%;
+                    flex: 70%;
+                    max-width: 70%;
                 }
             }
     
@@ -510,4 +511,20 @@ header, #portfolio, #about, #skills, #contact, footer{
             }
         }
     } 
+}
+
+// X-Large devices (large desktops, 1200px and up)
+@media (min-width: 1440px) {
+    #profile-info{
+        #portfolio{
+            #grid-container{
+                justify-content: space-around;
+                .column{
+                    flex: 40%;
+                    max-width: 40%;
+                }
+            }
+    
+        }
+    }
 }

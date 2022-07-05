@@ -1,3 +1,36 @@
+/* Start: Add some javascripts for download resume button. */
+const resumeBtns = document.querySelectorAll('.resume');
+resumeBtns.forEach(element => {
+    element.addEventListener('click', () => {
+        // Contruct the URL path to the resume pdf file.
+        const url = 'database/resume.pdf';
+
+        // Use fetch to fetch the pdf file.
+        fetch(url).then(
+            (response) => {
+                // Check and throw an error if an error occurs while fetch.
+                if (!response.ok) {
+                    throw new Error(`HTTP error: ${response.status}`);
+                }
+                // Convert the resulting response to a blob.
+                return response.blob();
+            }
+        ).then(
+            (blob) => {
+                const objectURL = URL.createObjectURL(blob);
+                window.open(`${objectURL}`);
+            }
+        ).catch(
+            (err) => {
+                console.error(`Fetch Problem: ${err.message}`);
+            }
+        );
+
+    });
+});
+/* End: Add some javascripts for download resume button. */
+
+
 /* Start: Add some javascripts for navigation bar. */
 const menu_icon = document.querySelector('#menu');
 const close_icon = document.querySelector('#close');
@@ -38,17 +71,6 @@ const map = L.mapquest.map('map', {
     zoom: 12
 });
 /* End: Add some javascript for map. */
-
-/* Start: Add tiny textarea */
-tinymce.init({
-    selector: 'textarea',
-    plugins: 'a11ychecker advcode casechange export formatpainter image editimage linkchecker autolink lists checklist media mediaembed pageembed permanentpen powerpaste table advtable tableofcontents tinycomments tinymcespellchecker',
-    toolbar: 'a11ycheck addcomment showcomments casechange checklist code export formatpainter image editimage pageembed permanentpen table tableofcontents',
-    toolbar_mode: 'floating',
-    tinycomments_mode: 'embedded',
-    tinycomments_author: 'Author name',
-});
-/* End: Add tiny textarea */
 
 
 /* Start: Use fetch to retrieve the projects. */
