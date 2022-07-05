@@ -1,4 +1,40 @@
-[
+{
+  "nav":[
+    {
+      "name": "Home",
+      "url": "#home"
+    },
+    {
+      "name": "Portfolio",
+      "url": "#portfolio"
+    },
+    {
+      "name": "About",
+      "url": "#about"
+    },
+    {
+      "name": "Skills",
+      "url": "#skills"
+    },
+    {
+      "name": "Contact",
+      "url": "#contact"
+    }
+
+  ],
+  "header":[
+    {
+      "name": "Thanh Pham",
+      "title": "Front-End Web Developer",
+      "button": [
+        {
+          "name": "Download Resume",
+          "url": "database/resume.pdf"
+        }
+      ]
+    }
+  ],
+  "portfolio":[
     {
       "name" : "Jane Doe",
       "link" : "https://thp001-jane-doe.netlify.app",
@@ -23,4 +59,51 @@
       "image" : "thp.jpg",
       "type" : "js"
     }
+  ],
+  "about":[
+    {
+      "content": "My name is Thanh Pham. I am a front end web developer based in Colorado, USA. I describe myself a passionate developer who loves coding, open source, and the web platform. I would love to create and contribute my work to help friends and local business. That helps me to learn a ton of new stuff, grow as a developer. In my free time, I would like to go fishing , go gym, or hiking around Colorado with my friends."
+    }
+  ],
+  "skill":[
+    {
+      "name":"HTML",
+      "percent": "90%"
+    },
+    {
+      "name":"CSS",
+      "percent":"85%"
+    },
+    {
+      "name": "Javascript",
+      "percent": "80%"
+    },
+    {
+      "name": "Sass",
+      "percent": "70%"
+    }
+  ],
+  "contact": [
+    {
+      "address": "5302 S Broadway Cir, Englewood, CO-80113",
+      "phone": "720 397 2824",
+      "email": "thanhpham091790@gmail.com",
+      "ll": "39.6296192, -104.9755648"
+    }
+  ],
+  "footer": [
+    {
+      "socials":[
+        {
+          "facebook": "",
+          "instagram": "",
+          "snapchat": "",
+          "pinterest": "",
+          "linkedin": ""
+
+        }
+      ],
+      "copyright": "Powered by Thanh Pham"
+    }
   ]
+}

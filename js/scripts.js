@@ -35,6 +35,7 @@ resumeBtns.forEach(element => {
 const menu_icon = document.querySelector('#menu');
 const close_icon = document.querySelector('#close');
 const mobile_nav = document.querySelector('#drop-down');
+const nav_link = document.querySelectorAll('#drop-down a');
 
 
 menu_icon.addEventListener('click', () => {
@@ -45,6 +46,13 @@ menu_icon.addEventListener('click', () => {
 close_icon.addEventListener('click', () => {
     menu_icon.style.display = 'block';
     mobile_nav.style.transform = 'translateX(100%)';
+});
+
+nav_link.forEach(element => {
+    element.addEventListener('click', () => {
+        menu_icon.style.display = 'block';
+        mobile_nav.style.transform = 'translateX(100%)';
+    });
 });
 /* End: Add some javascripts for navigation bar. */
 
@@ -90,7 +98,7 @@ fetch('./database/portfolios.json').then(
 ).then(
     // Run the initialize() function to process JSON data.
     (json) => {
-        initialize(json);
+        initialize(json.portfolio);
     }
 ).catch(
     (err) => {
