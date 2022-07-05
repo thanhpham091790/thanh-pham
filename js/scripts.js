@@ -98,7 +98,8 @@ fetch('./database/portfolios.json').then(
 ).then(
     // Run the initialize() function to process JSON data.
     (json) => {
-        initialize(json.portfolio);
+        about(json.about);
+        portfolio(json.portfolio);
     }
 ).catch(
     (err) => {
@@ -107,9 +108,22 @@ fetch('./database/portfolios.json').then(
     }
 );
 
+// Update about section base on content in database.
+function about(data) {
+    const about = document.querySelector('#about');
+    const h2 = document.createElement('h2');
+    const para = document.createElement('p');
+
+    h2.textContent = `${data[0].title}`;
+    para.textContent = `${data[0].content}`;
+
+    about.appendChild(h2);
+    about.appendChild(para);
+}
+
 
 // Setup the app logic, declares required variable, contains all the other functions.
-function initialize(projects) {
+function portfolio(projects) {
 
     // finalGroup contains an array of projects that need to be displayed.
     let finalGroup;
