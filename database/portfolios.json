@@ -2,7 +2,7 @@
   "nav":[
     {
       "name": "Home",
-      "url": "#home"
+      "url": "#header"
     },
     {
       "name": "Portfolio",
@@ -20,12 +20,12 @@
       "name": "Contact",
       "url": "#contact"
     }
-
   ],
   "header":[
     {
       "name": "Thanh Pham",
       "title": "Front-End Web Developer",
+      "image": "assets/header/profile_pic.jpg",
       "button": [
         {
           "name": "Download Resume",
@@ -62,11 +62,10 @@
   ],
   "about":[
     {
-      "title":"About Me",
       "content": "My name is Thanh Pham. I am a front end web developer based in Colorado, USA. I describe myself a passionate developer who loves coding, open source, and the web platform. I would love to create and contribute my work to help friends and local business. That helps me to learn a ton of new stuff, grow as a developer. In my free time, I would like to go fishing , go gym, or hiking around Colorado with my friends."
     }
   ],
-  "skill":[
+  "skills":[
     {
       "name":"HTML",
       "percent": "90%"
