@@ -1,38 +1,5 @@
 
-/* Start: Add some javascripts for navigation bar. */
-
-/* End: Add some javascripts for navigation bar. */
-
-
-
-/* Start: Add some javascript for percent bar. */
-const percentList = document.querySelectorAll('.percent');
-for (let i = 0; i < percentList.length; i++) {
-    let text = percentList[i].textContent;
-    let percentIndex = text.indexOf('%');
-    let num = parseInt(text.slice(0, percentIndex));
-    percentList[i].style.width = `${num}%`;
-}
-/* End: Add some javascript for percent bar. */
-
-
-/* Start: Add some javascript for map. */
-L.mapquest.key = '8bjlbcHoGVSkdZiGpfRlGbHFIItuSEnO';
-
-// 'map' refers to a <div> element with the ID map
-const map = L.mapquest.map('map', {
-    center: [39.6296192, -104.9755648],
-    layers: L.mapquest.tileLayer('light'),
-    zoom: 12
-});
-/* End: Add some javascript for map. */
-
-
 /* Start: Use fetch to retrieve the projects. */
-
-const filter = document.querySelector('#filter-container');
-const grid = document.querySelector('#grid-container');
-
 fetch('./database/portfolios.json').then(
     (response) => {
         if (!response.ok) {
@@ -50,6 +17,7 @@ fetch('./database/portfolios.json').then(
         renderPortfolioSection(json.portfolio);
         renderAboutSection(json.about);
         renderSkillsSection(json.skills);
+        renderContactSection(json.contact);
     }
 ).catch(
     (err) => {
@@ -230,6 +198,8 @@ function renderHeaderSection(data) {
     </div>
 </div>
 */
+const filter = document.querySelector('#filter-container');
+const grid = document.querySelector('#grid-container');
 function renderPortfolioSection(data) {
 
     // finalGroup contains an array of projects that need to be displayed.
@@ -331,7 +301,7 @@ function porfolioFilter(type) {
 function fetchBlob(project) {
     // Contruct the URL path to the image file from the product.image property.
     // const url = `assets/portfolio/${project.image}`;
-    const url = 'assets/portfolio/thp.jpg';
+    const url = 'assets/portfolio/bg.jpg';
 
     // Use fetch to fetch the image.
     fetch(url).then(
@@ -439,9 +409,58 @@ function renderAboutSection(data) {
 */
 const skills = document.querySelector('#skills');
 function renderSkillsSection(data) {
-   
+    const skill_groups = document.createElement('div');
+    skill_groups.setAttribute('class', 'skill-groups');
+    data.forEach(element => {
+        const container = document.createElement('div');
+        container.setAttribute('class', 'container');
+        const p = document.createElement('p');
+        p.textContent = `${element.name}`;
+        const bar = document.createElement('div');
+        bar.setAttribute('class', 'bar');
+        const percent = document.createElement('div');
+        percent.setAttribute('class', 'percent');
+        percent.textContent = `${element.percent}`;
+        let percentIndex = `${element.percent}`.indexOf('%');
+        let num = parseInt(`${element.percent}`.slice(0, percentIndex));
+        percent.style.width = `${num}%`;
+        bar.appendChild(percent);
+        container.appendChild(p);
+        container.appendChild(bar);
+        skill_groups.appendChild(container);
+    });
+    skills.appendChild(skill_groups);
 }
 
+/* 
+Rendering the contact section from database. 
+*/
 
+function renderContactSection(data) {
+    const address = document.querySelector('#mail');
+    const p1 = document.createElement('p');
+    p1.textContent = `${data[0].address}`;
+    address.appendChild(p1);
 
+    const phone = document.querySelector('#phone');
+    const p2 = document.createElement('p');
+    p2.textContent = `${data[0].phone}`;
+    phone.appendChild(p2);
+
+    const email = document.querySelector('#email');
+    const p3 = document.createElement('p');
+    p3.textContent = `${data[0].email}`;
+    email.appendChild(p3);
+}
 /* End: Use fetch to retrieve the projects. */
+
+/* Start: Add some javascript for map. */
+L.mapquest.key = '8bjlbcHoGVSkdZiGpfRlGbHFIItuSEnO';
+
+// 'map' refers to a <div> element with the ID map
+const map = L.mapquest.map('map', {
+    center: [39.6296192, -104.9755648],
+    layers: L.mapquest.tileLayer('light'),
+    zoom: 12
+});
+/* End: Add some javascript for map. */

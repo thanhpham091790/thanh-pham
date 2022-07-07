@@ -144,6 +144,9 @@ header, #portfolio, #about, #skills, #contact, footer {
 #profile-info header img {
   margin: 1.6rem auto;
 }
+#profile-info #portfolio #filter-container .btn {
+  text-transform: uppercase;
+}
 #profile-info #portfolio #grid-container {
   display: flex;
   flex-direction: row;

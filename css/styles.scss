@@ -173,6 +173,12 @@ header, #portfolio, #about, #skills, #contact, footer{
     }
 
     #portfolio{
+        #filter-container{
+            .btn{
+                text-transform: uppercase;
+            }
+        }
+        
         #grid-container{
             display: flex;
             flex-direction: row;
