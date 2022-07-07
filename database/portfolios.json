@@ -38,25 +38,43 @@
     {
       "name" : "Jane Doe",
       "link" : "https://thp001-jane-doe.netlify.app",
-      "image" : "thp.jpg",
+      "image" : "bg.jpg",
       "type" : "html"
     },
     {
       "name" : "Will It Miss",
       "link" : "https://thp002-will-it-miss.netlify.app",
-      "image" : "thp.jpg",
+      "image" : "bg.jpg",
       "type" : "api"
     },
     {
       "name" : "Lead Generation CQL",
       "link" : "https://thp003-lead-generation-cql.netlify.app",
-      "image" : "thp.jpg",
+      "image" : "bg.jpg",
       "type" : "css"
     },
     {
       "name" : "Burger House",
       "link" : "https://thp004-burger-house.netlify.app",
-      "image" : "thp.jpg",
+      "image" : "bg.jpg",
+      "type" : "js"
+    },
+    {
+      "name" : "Upscale Nail",
+      "link" : "https://thanhpham091790.github.io/upscale-nails",
+      "image" : "bg.jpg",
+      "type" : "html"
+    },
+    {
+      "name" : "Shoe Brand",
+      "link" : "https://thanhpham091790.github.io/shoe-brand",
+      "image" : "bg.jpg",
+      "type" : "css"
+    },
+    {
+      "name" : "Pho Le",
+      "link" : "https://thanhpham091790.github.io/pho-le",
+      "image" : "bg.jpg",
       "type" : "js"
     }
   ],
